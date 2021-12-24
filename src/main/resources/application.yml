@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+baidu:
+  # 人脸识别
+  humaface:
+    app-name: face # 应用名称
+    app-id:  25022118 # appID
+    app-key: qVpvFFRebLH3XXOs05YnpTM6 # API Key
+    secret-key: NeGAbm9wnYFGmGyimOsKZNKNEnLsKO4X # Secret Key
+  # 语音识别
+  speech:
+    app-name: Speech_Recognition # 应用名称
+    app-id: xxx # appID
+    app-key: xxxxx # API Key
+    secret-key: xxxxxxxxx # Seacret Key

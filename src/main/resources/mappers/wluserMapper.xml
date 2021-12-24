@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="the_first.demo.dao.WluserDao">
+
+
+    <select id="findwluserByStunum" parameterType="String" resultType="the_first.demo.model.User">
+        select * from wluser where stunum = #{stunum} or stuphone = #{stunum}
+    </select>
+
+    <select id="findwluserByStuphone" parameterType="String" resultType="the_first.demo.model.User">
+        select * from wluser where stuphone = #{stuphone}
+    </select>
+    <select id="findwluserByStupwd" parameterType="String" resultType="the_first.demo.model.User">
+        select * from wluser where stupwd = #{stupwd}
+    </select>
+    <select id="findwluserByStuemail" parameterType="String" resultType="the_first.demo.model.User">
+        select * from wluser where stuemail = #{stuemail}
+    </select>
+    <insert id="insertuser" parameterType="the_first.demo.model.User" >
+        insert into wluser (stunum,stuphone,stupwd,stuemail,salt) values(#{user.stunum},#{user.stuphone},
+                                                                    #{user.stupwd},#{user.stuemail},#{user.salt})
+    </insert>
+    <update id="updatePwd" parameterType="the_first.demo.model.User">
+        update wluser set stupwd = #{user.stupwd} where stunum = #{user.stunum}
+    </update>
+
+
+</mapper>
